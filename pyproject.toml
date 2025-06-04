@@ -1,0 +1,43 @@
+[project]
+name = "coursework"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Ksenia Veremyeva",email = "kseniaver2014@yandex.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.lint.dependencies]
+isort = "^6.0.1"
+black = "^25.1.0"
+mypy = "^1.15.0"
+flake8 = "^7.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^6.1.1"
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_return_any = true
+exclude = 'venv'
+
+
+[tool.black]
+# Максимальная длина строки
+line-length = 119
+# Файлы, которые не нужно форматировать
+exclude = ".git"
+
+[tool.isort]
+# максимальная длина строки
+line_length = 119
